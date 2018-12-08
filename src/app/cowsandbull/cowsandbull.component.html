@@ -1,0 +1,77 @@
+<h2 style="margin-left: 39%">
+  {{title}}
+</h2>
+
+
+<br>
+<h3 style="margin-left: 42%">choose your Level</h3>
+<br>
+<div style="margin-left: 39%">
+    
+    <button type="button" class="btn btn-primary btn-lg" (click)="LockWord(3)">LEVEL-1</button>
+    <button type="button" class="btn btn-primary btn-lg" (click)="LockWord(4)">LEVEL-2</button>
+    <button type="button" class="btn btn-primary btn-lg"(click)="LockWord(5)">LEVEL-3</button>
+</div>
+
+<div style="margin-left: 38%">
+   
+  <br>
+  <br>
+  <div class="input-group input-group-lg">
+
+  <input #box (keyup.enter)="onEnter(box.value)" type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" size="35">
+  </div>
+</div>
+<div style="margin-left: 40%">
+   
+
+    <br>
+    <br>
+  <table class="table table-bordered" style="margin-left: -35%">
+    <thead>
+      <th scope="col" > Word </th>
+      <th scope="col"> Bulls </th>
+      <th scope="col"> Cows </th>
+    </thead>
+    <tbody >
+      <tr *ngFor="let try of tries" >
+        <td>{{try.word}}</td>
+        <td>{{try.bulls}}</td>
+        <td>{{try.cows}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+  
+
+<div class="alert alert-dark" role="alert">
+    <h3 style="margin-left: 39%">{{congrats}}</h3>
+  </div>
+
+
+
+<div class="jumbotron text-left">
+<p>
+  This fun word game is a great brain teaser that you can play alone in under 5 minutes. The objective of the game is to guess a Secret Word in a limited number of tries. Based on the level selected, it can be a three, four or five letter word. For each time you try to guess, the system will return 2 clues. These 2 clues are called the Cow and the Bull. 
+<br>
+<br>
+<B>Bull</B> - indicates that you have guessed one of the letters in the secret word, but, it is NOT IN the correct position. 
+<br>
+<br>
+<B>Cow</B>- indicates that you have guessed one of the letters in the secret word, and, it is IN the correct position. 
+<br>
+<br>
+With the help of the Cows and Bulls that you uncover with each try, you are better equipped to guess the Secret Word. 
+<br>
+<br>
+This game improves logical thinking & aptitude. 
+<br>
+<br>
+keep guessing and have fun !!!
+<br>
+<br>
+LEVEL-1 is 3 letter word game ,LEVEL-2 is 4 letter word game,LEVEL-3 is 5 letter word game
+</p>
+</div>
+
